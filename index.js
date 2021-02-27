@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get("/word" , (req , res) => {
   Word.find({})
-  .then(words => res.send({success : true , words}))
+  .then(words => res.send({success : true , words : words.reverse()}))
   .catch(error => res.send({success : false , message : error}))
 })
 
